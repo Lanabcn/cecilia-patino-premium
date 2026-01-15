@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cecilia Patiño — Salud & Estética en Barcelona</title>
+  <meta name="description" content="Centro de salud y estética en Barcelona. Tratamientos faciales y corporales, tecnología avanzada y cuidado premium." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Preload hero -->
+  <link rel="preload" as="image" href="./assets/img/inicio_1.jpg" />
+  <!-- cache-busting sencillo -->
+  <link rel="stylesheet" href="./assets/css/style.css?v=20251001" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Volver al inicio">
+        <img src="./assets/img/logo.png" alt="Logo Centro Cecilia Patiño" class="brand-logo" />
+        <span class="brand-name">Cecilia Patiño</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <button class="hamburger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="menu" class="menu">
+          <li><a class="active" aria-current="page" href="index.html">Inicio</a></li>
+          <li><a href="nosotras.html">Nosotras</a></li>
+          <li><a href="tratamientos.html">Tratamientos</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+         <!-- <li><a href="blog.html">Blog</a></li> --> 
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="right-actions">
+        <label class="lang-select" aria-label="Seleccionar idioma">
+          <select id="languageSwitcher">
+            <option value="es" selected>ES</option>
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="ca">CA</option>
+          </select>
+        </label>
+
+        <!-- Promo = outline gris -->
+        <a class="btn btn-outline" href="https://booksy.com/es-es/113273_salut-i-estetica-cecilia-patino_medicina-estetica_48863_barcelona?do=invite"
+           target="_blank" rel="noopener noreferrer">Promo</a>
+
+        <!-- Reserva = dorado -->
+        <a class="btn btn-gold" href="https://booksy.com/es-es/113273_salut-i-estetica-cecilia-patino_medicina-estetica_48863_barcelona?do=invite" 
+           target="_blank" rel="noopener noreferrer">Reserva</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="contenido" tabindex="-1">
+    
+    <!-- Hero SIN texto encima -->
+    <section class="hero hero--inicio">
+      <img src="./assets/img/inicio_1.jpg" alt="Centro Cecilia Patiño en Barcelona" width="1800" height="900" decoding="async" fetchpriority="high">
+    </section>
+
+    <!-- Título y CTAs -->
+    <section class="section center">
+      <div class="container narrow">
+        <h1>Salud & Estética en armonía</h1>
+        <p>Tratamientos faciales y corporales para tu bienestar, en un entorno premium y personalizado.</p>
+      </div>
+    </section>
+
+    <!-- Servicios destacados -->
+    <section class="section center">
+      <div class="container">
+        <h2>Servicios destacados</h2>
+        <div class="cards-4">
+          <article class="card card--static card--info" aria-label="Relajación y tratamientos faciales">
+            <img src="./assets/img/inicio_2.jpg" alt="Tratamiento facial en camilla, ambiente cálido" width="1200" height="900" loading="lazy">
+            <div class="card-body">
+              <h3>Relajación &amp; Faciales</h3>
+              <p>Protocolos manuales para limpiar, equilibrar y devolver confort a la piel.</p>
+            </div>
+          </article>
+
+          <article class="card card--static card--info" aria-label="Tratamientos corporales y bienestar">
+            <img src="./assets/img/inicio_3.jpg" alt="Masaje corporal profesional" width="1200" height="900" loading="lazy">
+            <div class="card-body">
+              <h3>Corporales &amp; Bienestar</h3>
+              <p>Drenaje, moldeado y descanso muscular para una silueta más ligera.</p>
+            </div>
+          </article>
+
+          <article class="card card--static card--info" aria-label="Tecnología estética avanzada">
+            <img src="./assets/img/inicio_4.jpg" alt="Aparatología estética de última generación" width="1200" height="900" loading="lazy">
+            <div class="card-body">
+              <h3>Tecnología Avanzada</h3>
+              <p>Radiofrecuencia, microcorrientes y LPG Endermologie® para firmeza y textura.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTRAS -->
+    <section class="section nosotras">
+      <div class="container wide">
+        <h2>Nosotras</h2>
+        <p>En el Centro Cecilia Patiño cuidamos tu bienestar con técnica manual y tecnología avanzada. Trato cercano, diagnóstico honesto y protocolos personalizados.</p>
+        <p class="center" style="margin-top:10px">
+          <a class="btn btn-outline" href="nosotras.html">Conócenos</a>
+        </p>
+      </div>
+
+      <div class="nosotras-hero">
+        <picture>
+          <source srcset="./assets/img/nosotras_cecilia.webp" type="image/webp">
+          <img src="./assets/img/nosotras_cecilia.jpg" alt="Cecilia Patiño en su centro" width="1800" height="900" loading="lazy">
+        </picture>
+      </div>
+    </section>
+
+    <!-- Tratamientos destacados -->
+    <section class="section">
+      <div class="container">
+        <h2>Tratamientos destacados</h2>
+        <div class="cards-4">
+          <a class="card card-link" href="tratamientos.html#faciales">
+            <img src="./assets/img/facial_hero.png" alt="Tratamientos faciales" width="1200" height="900" loading="lazy">
+            <h3>Faciales</h3>
+            <p>Limpieza, hidratación y rejuvenecimiento.</p>
+          </a>
+
+          <a class="card card-link" href="tratamientos.html#corporales">
+            <img src="./assets/img/tratcor.jpg" alt="Tratamientos corporales" width="1200" height="900" loading="lazy">
+            <h3>Corporales</h3>
+            <p>Moldeo, drenaje y bienestar.</p>
+          </a>
+
+          <a class="card card-link" href="tratamientos.html#aparatologia-facial">
+            <img src="./assets/img/aparat-hero.jpg" alt="Aparatología facial" width="1200" height="900" loading="lazy">
+            <h3>Aparatología facial</h3>
+            <p>Radiofrecuencia, microcorrientes…</p>
+          </a>
+
+          <a class="card card-link" href="tratamientos.html#aparatologia-corporal">
+            <img src="./assets/img/avanzados_corporales.jpg" alt="Aparatología corporal" width="1200" height="900" loading="lazy">
+            <h3>Aparatología corporal</h3>
+            <p>Reducción, firmeza y resultados visibles.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Cecilia Patiño</strong><br>
+        Salud & Estética — Barcelona<br>
+        <a href="tel:+34666280282">(+34) 666 280 282</a><br>
+        <a href="https://www.google.com/maps/search/?api=1&query=Carrer+Galileu+306,+08028+Barcelona" target="_blank">Carrer Galileu, 306, Barcelona</a>
+      </div>
+
+      <nav aria-label="Legal">
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="#">Cookies</a>
+      </nav>
+
+      <div class="social">
+        <a href="https://booksy.com" target="_blank">Booksy</a>
+        <a href="https://instagram.com/ceciliapatinoesteticabcn" target="_blank">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <div class="cookie-inner">
+      <p>Usamos cookies analíticas para mejorar tu experiencia. <a href="privacidad.html" target="_blank">Más info</a>.</p>
+      <div class="cookie-actions">
+        <button id="cookie-reject" class="btn">Rechazar</button>
+        <button id="cookie-accept" class="btn btn-gold">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
