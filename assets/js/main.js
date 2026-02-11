@@ -97,3 +97,96 @@
     if (ev.key === "Escape") close();
   });
 })();
+
+/* Header spacer: escribe --header-h según el alto real del header */
+(() => {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  let t;
+
+  const syncHeaderHeight = () => {
+    const h = Math.ceil(header.getBoundingClientRect().height);
+    document.documentElement.style.setProperty("--header-h", `${h}px`);
+  };
+
+  window.addEventListener("load", syncHeaderHeight);
+  window.addEventListener("resize", () => {
+    clearTimeout(t);
+    t = setTimeout(syncHeaderHeight, 120);
+  });
+
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(syncHeaderHeight).observe(header);
+  }
+})();
+
+// Traductor premium (UI) + Google Translate (cookie)
+(function () {
+  const toggle = document.getElementById("langToggle");
+  const menu = document.getElementById("langMenu");
+  const current = document.getElementById("langCurrent");
+
+  if (!toggle || !menu || !current) return;
+
+  function setCookie(name, value) {
+    document.cookie = `${name}=${value}; path=/; max-age=31536000`;
+  }
+
+  function getCookie(name) {
+    return document.cookie
+      .split("; ")
+      .find(row => row.startsWith(name + "="))
+      ?.split("=")[1];
+  }
+
+  function setLang(lang) {
+    setCookie("googtrans", `/es/${lang}`);
+    location.reload();
+  }
+
+  function paintCurrent(lang) {
+    if (!lang) {
+      current.textContent = "ES";
+      return;
+    }
+    // Google usa "uk" para ucraniano, pero tú quieres mostrar "UA"
+    if (lang === "uk") {
+      current.textContent = "UA";
+    } else {
+      current.textContent = lang.toUpperCase();
+    }
+  }
+
+  // Abrir/cerrar menú
+  toggle.addEventListener("click", () => {
+    const open = menu.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+
+  // Cerrar por click fuera
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Elegir idioma
+  menu.querySelectorAll(".lang-item").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const lang = btn.dataset.lang;
+      paintCurrent(lang);   // <-- aquí
+      setLang(lang);
+    });
+  });
+
+  // Mostrar idioma actual (cookie)
+  const gt = getCookie("googtrans");
+  if (gt) {
+    const lang = decodeURIComponent(gt).split("/")[2];
+    paintCurrent(lang);    // <-- y aquí
+  } else {
+    paintCurrent("es");
+  }
+})();

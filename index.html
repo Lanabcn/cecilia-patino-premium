@@ -40,15 +40,24 @@
         </ul>
       </nav>
 
-      <div class="right-actions">
-        <label class="lang-select" aria-label="Seleccionar idioma">
-          <select id="languageSwitcher">
-            <option value="es" selected>ES</option>
-            <option value="en">EN</option>
-            <option value="fr">FR</option>
-            <option value="ca">CA</option>
-          </select>
-        </label>
+ <!-- Traductor (UI premium) -->
+<div class="lang-switcher">
+  <button id="langToggle" class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+    <span class="lang-icon" aria-hidden="true">🌐</span>
+    <span id="langCurrent" class="lang-text">ES</span>
+  </button>
+
+  <ul id="langMenu" class="lang-menu" role="listbox" aria-label="Seleccionar idioma">
+    <li><button type="button" class="lang-item" data-lang="es">ES — Español</button></li>
+    <li><button type="button" class="lang-item" data-lang="en">EN — English</button></li>
+    <li><button type="button" class="lang-item" data-lang="fr">FR — Français</button></li>
+    <li><button type="button" class="lang-item" data-lang="it">IT — Italiano</button></li>
+    <li><button type="button" class="lang-item" data-lang="de">DE — Deutsch</button></li>
+    <li><button type="button" class="lang-item" data-lang="uk">UK — Українська</button></li>
+    <li><button type="button" class="lang-item" data-lang="ru">RU — Русский</button></li>
+  </ul>
+</div>
+
 
         <!-- Promo = outline gris -->
         <a class="btn btn-outline" href="https://booksy.com/es-es/113273_salut-i-estetica-cecilia-patino_medicina-estetica_48863_barcelona?do=invite"
@@ -59,13 +68,16 @@
            target="_blank" rel="noopener noreferrer">Reserva</a>
       </div>
     </div>
+
   </header>
+
+<div class="header-spacer" aria-hidden="true"></div>
 
   <!-- MAIN -->
   <main id="contenido" tabindex="-1">
     
-    <!-- Hero SIN texto encima -->
-    <section class="hero hero--inicio">
+    <!-- Hero -->
+    <section class="hero--inicio">
       <img src="./assets/img/inicio_1.jpg" alt="Centro Cecilia Patiño en Barcelona" width="1800" height="900" decoding="async" fetchpriority="high">
     </section>
 
@@ -102,7 +114,7 @@
             <img src="./assets/img/inicio_4.jpg" alt="Aparatología estética de última generación" width="1200" height="900" loading="lazy">
             <div class="card-body">
               <h3>Tecnología Avanzada</h3>
-              <p>Radiofrecuencia, microcorrientes y LPG Endermologie® para firmeza y textura.</p>
+              <p>Radiofrecuencia, microcorrientes, LPG Endermologie® y etc. para firmeza y textura.</p>
             </div>
           </article>
         </div>
@@ -121,8 +133,7 @@
 
       <div class="nosotras-hero">
         <picture>
-          <source srcset="./assets/img/nosotras_cecilia.webp" type="image/webp">
-          <img src="./assets/img/nosotras_cecilia.jpg" alt="Cecilia Patiño en su centro" width="1800" height="900" loading="lazy">
+          <img src="./assets/img/inicio_nosotras2.png" alt="Cecilia Patiño en su centro" width="1800" height="900" loading="lazy">
         </picture>
       </div>
     </section>
@@ -147,7 +158,7 @@
           <a class="card card-link" href="tratamientos.html#aparatologia-facial">
             <img src="./assets/img/aparat-hero.jpg" alt="Aparatología facial" width="1200" height="900" loading="lazy">
             <h3>Aparatología facial</h3>
-            <p>Radiofrecuencia, microcorrientes…</p>
+            <p>Radiofrecuencia, microcorrientes, LPG y etc.</p>
           </a>
 
           <a class="card card-link" href="tratamientos.html#aparatologia-corporal">
@@ -160,42 +171,115 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Cecilia Patiño</strong><br>
-        Salud & Estética — Barcelona<br>
-        <a href="tel:+34666280282">(+34) 666 280 282</a><br>
-        <a href="https://www.google.com/maps/search/?api=1&query=Carrer+Galileu+306,+08028+Barcelona" target="_blank">Carrer Galileu, 306, Barcelona</a>
-      </div>
+<!--Footer-->
+<footer class="site-footer">
+  <div class="container footer-grid">
 
-      <nav aria-label="Legal">
-        <a href="aviso-legal.html">Aviso legal</a>
-        <a href="privacidad.html">Política de privacidad</a>
-        <a href="#">Cookies</a>
-      </nav>
+    <!-- Columna 1 -->
+    <div class="footer-info">
+      <strong>Cecilia Patiño</strong><br>
+      Salud & Estética — Barcelona<br>
 
-      <div class="social">
-        <a href="https://booksy.com" target="_blank">Booksy</a>
-        <a href="https://instagram.com/ceciliapatinoesteticabcn" target="_blank">Instagram</a>
-        <a href="#">Facebook</a>
-      </div>
+      <ul class="footer-contact">
+        <li>
+          <a href="tel:+34666280282">
+            <span class="f-icon">☎</span>
+            <span>(+34) 666 280 282</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.google.com/maps/search/?api=1&query=Carrer+Galileu+306,+08028+Barcelona" target="_blank" rel="noopener">
+            <span class="f-icon">📍</span>
+            <span>Carrer Galileu, 306, Barcelona</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="mailto:cecilipatinoesteticabcn@gmail.com">
+            <span class="f-icon">✉</span>
+            <span>cecilipatinoesteticabcn@gmail.com</span>
+          </a>
+        </li>
+      </ul>
     </div>
-  </footer>
 
-  <script src="./assets/js/main.js"></script>
+    <!-- Columna 2 -->
+    <nav class="footer-legal" aria-label="Legal">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Política de privacidad</a>
+      <a href="#">Cookies</a>
+    </nav>
 
-  <!-- Cookie Banner -->
-  <div id="cookie-banner" class="cookie-banner" hidden>
-    <div class="cookie-inner">
-      <p>Usamos cookies analíticas para mejorar tu experiencia. <a href="privacidad.html" target="_blank">Más info</a>.</p>
-      <div class="cookie-actions">
-        <button id="cookie-reject" class="btn">Rechazar</button>
-        <button id="cookie-accept" class="btn btn-gold">Aceptar</button>
+    <!-- Columna 3 -->
+    <div class="footer-social">
+      <p class="footer-social-title">Síguenos</p>
+
+      <div class="footer-social-wrap">
+       
+        <ul class="footer-social-grid">
+          <li><a href="https://wa.me/34666280282" target="_blank" rel="noopener">
+            <span class="f-icon">💬</span><span class="label">WhatsApp</span>
+          </a></li>
+
+          <li><a href="http://salutiesteticaceciliapatino.booksy.com/g" target="_blank" rel="noopener">
+            <span class="f-icon">B</span><span class="label">Booksy</span>
+          </a></li>
+
+          <li><a href="https://www.tiktok.com/@cecilia_estetica_bcn?lang=es" target="_blank" rel="noopener">
+            <span class="f-icon">♪</span><span class="label">TikTok</span>
+          </a></li>
+
+          <li><a href="https://www.instagram.com/ceciliapatinoesteticabcn/" target="_blank" rel="noopener">
+            <span class="f-icon">◎</span><span class="label">Instagram</span>
+          </a></li>
+
+          <li><a href="https://www.facebook.com/profile.php?id=61578187953126" target="_blank" rel="noopener">
+            <span class="f-icon">f</span><span class="label">Facebook</span>
+          </a></li>
+
+          <li><a href="https://www.treatwell.es/establecimiento/salut-i-estetica-cecilia-patino/" target="_blank" rel="noopener">
+            <span class="f-icon">T</span><span class="label">Treatwell</span>
+          </a></li>
+        </ul>        
       </div>
     </div>
   </div>
+</footer>
+
+
+  <!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner" hidden>
+  <div class="cookie-inner">
+    <p>Usamos cookies analíticas para mejorar tu experiencia. 
+      <a href="privacidad.html" target="_blank">Más info</a>.
+    </p>
+    <div class="cookie-actions">
+      <button id="cookie-reject" class="btn">Rechazar</button>
+      <button id="cookie-accept" class="btn btn-gold">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Google Translate oculto -->
+<script src="./assets/js/main.js"></script>
+
+<script>
+window.googleTranslateElementInit = function () {
+  new window.google.translate.TranslateElement(
+    {
+      pageLanguage: "es",
+      autoDisplay: false
+    },
+    "google_translate_element"
+  );
+};
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div id="google_translate_element" class="gt-holder"></div>
 
 </body>
 </html>
+
