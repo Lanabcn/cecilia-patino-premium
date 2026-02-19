@@ -1,11 +1,6 @@
-/* =========================================================
-   CECILIA PATIÑO — CSS LIMPIO (SIN DUPLICADOS)
-   Basado en tu CSS actual (misma estructura y clases)
-   ========================================================= */
+/* CECILIA PATIÑO — CSS LIMPIO */
 
-/* ===============================
-   1) BASE / RESET
-   =============================== */
+/* 1) BASE / RESET */
 * { box-sizing: border-box; }
 
 html{
@@ -49,9 +44,7 @@ button:focus-visible,
   border-radius: 8px;
 }
 
-/* ===============================
-   2) VARIABLES
-   =============================== */
+/* 2) VARIABLES */
 :root{
   /* Texto y fondo */
   --texto: #1e1e1e;
@@ -77,9 +70,7 @@ button:focus-visible,
   --header-h: var(--header-h-min);
 }
 
-/* ===============================
-   3) CONTENEDORES / SECCIONES
-   =============================== */
+/* 3) CONTENEDORES / SECCIONES */
 .container{
   width: min(1120px, 92%);
   margin: 0 auto;
@@ -100,10 +91,8 @@ button:focus-visible,
   .section{ padding: 32px 0 40px; }
 }
 
-/* ===============================
-   4) HEADER + NAV
-   =============================== */
-.site-header{
+/* 4) HEADER + NAV*/
+.site-header{ 
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 9999;
@@ -166,10 +155,106 @@ button:focus-visible,
 }
 
 .menu a{
+  position: relative;
   white-space: nowrap;
   font-size: 15px;
   padding: 8px 6px;
   border-radius: 8px;
+  transition: color .25s ease, transform .15s ease;
+}
+
+/* Rayita dorada animada */
+.menu a::after{
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: 2px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-mid));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+
+.menu a:hover{
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.menu a:hover::after{
+  transform: scaleX(1);
+}
+
+/* Acciones derecha */
+.right-actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+/* Hamburguesa */
+.hamburger{
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+
+.hamburger span{
+  width: 20px;
+  height: 2px;
+  background: #333;
+  display: block;
+}
+
+/* <= 1024 (tablet/móvil) */
+@media (max-width: 1024px){
+  .menu{ display: none; }
+  .hamburger{ display: inline-flex; }
+  .main-nav{ justify-content: flex-start; }
+
+  .menu.show{
+    display: flex;
+    position: fixed;
+    top: var(--header-h);
+    left: 50%;
+    width: min(92vw, 420px);
+    transform: translateX(-50%);
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 10px;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 9999;
+    box-shadow: 0 14px 30px rgba(0,0,0,.12);
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: min(320px, calc(100dvh - var(--header-h) - 16px));
+    overflow: auto;
+    align-content: start;
+  }
+
+  .menu{
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .menu.show a{
+    padding: 10px 12px;
+    border-radius: 10px;
+    line-height: 1.2;
+  }
 }
 
 /* Acciones derecha */
